@@ -15,7 +15,10 @@ func New(prefix string) *Scribe {
 func NewWithWriter(w Writer, prefix string) *Scribe {
 	var s Scribe
 	s.w = w
-	s.prefix = prefix
+	if len(prefix) > 0 {
+		s.prefix = prefix + " :: "
+	}
+
 	return &s
 }
 
@@ -29,7 +32,7 @@ type Scribe struct {
 // new will append a new scribe Entry
 func (s *Scribe) new(t Type, msg string, data interface{}) {
 	// Prepend prefix to message
-	msg = s.prefix + " :: " + msg
+	msg = s.prefix + msg
 	// Create new entry from provided values
 	e := newEntry(t, msg, data)
 	// Write entry to writer
