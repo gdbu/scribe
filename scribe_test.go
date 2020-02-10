@@ -4,11 +4,11 @@ import "testing"
 
 func TestScribe_New(t *testing.T) {
 	s := New("Testing")
-	s.Notification("Notification", nil)
-	s.Success("Success", nil)
-	s.Warning("Warning", nil)
-	s.Error("Error", nil)
-	s.Debug("Debug", nil)
+	s.Notification("This is a notification log", nil)
+	s.Success("This is a success log", nil)
+	s.Warning("This is a warning log", nil)
+	s.Error("This is an error log", nil)
+	s.Debug("This is a debug log", nil)
 }
 
 func TestScribe_New_File(t *testing.T) {
@@ -24,9 +24,9 @@ func TestScribe_New_File(t *testing.T) {
 	f.SetLineCapacity(1)
 
 	s := NewWithWriter(f, "Testing")
-	s.Notification("Notification", nil)
-	s.Success("Success", nil)
-	s.Warning("Warning", nil)
-	s.Error("Error", nil)
-	s.Debug("Debug", nil)
+	s.Notification("This is a notification log", nil)
+	s.Success("This is a success log", nil)
+	s.Warning("This is a warning log", nil)
+	s.Error("This is an error log", nil)
+	s.Debug("This is a debug log", nil)
 }
