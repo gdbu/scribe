@@ -1,5 +1,5 @@
 # Scribe [![GoDoc](https://godoc.org/github.com/hatchify/scribe?status.svg)](https://godoc.org/github.com/hatchify/scribe) ![Status](https://img.shields.io/badge/status-beta-yellow.svg)
-Scribe is an scribe logger helper library a few simple features:
+Scribe is an output logger helper library a few simple features:
 
 * Thread-safe
 * Colored dot prefix for status (success, warning, error, debug)
