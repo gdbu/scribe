@@ -4,6 +4,20 @@ import (
 	"fmt"
 	"path"
 	"runtime"
+
+	"github.com/fatih/color"
+)
+
+const dot = "● "
+
+var (
+	green  = color.New(color.FgGreen)
+	yellow = color.New(color.FgYellow)
+	red    = color.New(color.FgRed)
+
+	greenDot  = green.Sprint(dot)
+	yellowDot = yellow.Sprint(dot)
+	redDot    = red.Sprint(dot)
 )
 
 func newErrorCatch(fn func() error) func() {

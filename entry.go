@@ -1,6 +1,9 @@
 package scribe
 
-import "time"
+import (
+	"fmt"
+	"time"
+)
 
 func newEntry(t Type, msg string, data interface{}) *Entry {
 	var e Entry
@@ -21,4 +24,17 @@ type Entry struct {
 	Message string `json:"message"`
 	// Any additional data associated with entry
 	Data interface{} `json:"data"`
+}
+
+func (e *Entry) getDataString() (out string) {
+	if e.Data == nil {
+		return
+	}
+
+	return fmt.Sprintf(" (%+v)", e.Data)
+}
+
+func (e *Entry) String() string {
+	data := e.getDataString()
+	return e.Message + data
 }
