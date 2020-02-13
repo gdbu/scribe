@@ -7,11 +7,11 @@ import (
 
 func TestScribe_New(t *testing.T) {
 	s := New("Testing")
-	s.Notification("This is a notification log", nil)
-	s.Success("This is a success log", nil)
-	s.Warning("This is a warning log", nil)
-	s.Error("This is an error log", nil)
-	s.Debug("This is a debug log", nil)
+	s.Notification("This is a notification log")
+	s.Success("This is a success log")
+	s.Warning("This is a warning log")
+	s.Error("This is an error log")
+	s.Debug("This is a debug log")
 }
 
 func TestScribe_New_File(t *testing.T) {
@@ -32,11 +32,11 @@ func TestScribe_New_File(t *testing.T) {
 	f.SetLineCapacity(1)
 
 	s := NewWithWriter(f, "Testing")
-	s.Notification("This is a notification log", nil)
-	s.Success("This is a success log", nil)
-	s.Warning("This is a warning log", nil)
-	s.Error("This is an error log", nil)
-	s.Debug("This is a debug log", nil)
+	s.Notification("This is a notification log")
+	s.Success("This is a success log")
+	s.Warning("This is a warning log")
+	s.Error("This is an error log")
+	s.Debug("This is a debug log")
 }
 
 func TestScribe_New_Syslog(t *testing.T) {
@@ -56,9 +56,9 @@ func TestScribe_New_Syslog(t *testing.T) {
 	defer w.Close()
 
 	s := NewWithWriter(w, "Testing")
-	s.Notification("This is a notification log", nil)
-	s.Success("This is a success log", nil)
-	s.Warning("This is a warning log", nil)
-	s.Error("This is an error log", nil)
-	s.Debug("This is a debug log", nil)
+	s.Notification("This is a notification log")
+	s.Success("This is a success log")
+	s.Warning("This is a warning log")
+	s.Error("This is an error log")
+	s.Debug("This is a debug log")
 }

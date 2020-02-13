@@ -42,59 +42,117 @@ func (s *Scribe) new(t Type, msg string, data interface{}) {
 }
 
 // Notification will create a new notificaton entry
-func (s *Scribe) Notification(msg string, data interface{}) {
+func (s *Scribe) Notification(msg string) {
+	s.new(TypeNotification, msg, nil)
+}
+
+// Notificationf will create a new notificaton entry with a format message
+func (s *Scribe) Notificationf(msg string, args ...interface{}) {
+	msg = fmt.Sprintf(msg, args...)
+	s.Notification(msg)
+}
+
+// NotificationWithData will create a new notificaton entry with Data
+func (s *Scribe) NotificationWithData(msg string, data interface{}) {
 	s.new(TypeNotification, msg, data)
 }
 
-// Notificationf will create a new notificaton entry
-func (s *Scribe) Notificationf(msg string, data interface{}, args ...interface{}) {
+// NotificationWithDataf will create a new notificaton entry with Data and a format message
+func (s *Scribe) NotificationWithDataf(msg string, data interface{}, args ...interface{}) {
 	msg = fmt.Sprintf(msg, args...)
-	s.Notification(msg, data)
+	s.NotificationWithData(msg, data)
 }
 
 // Success will create a new success entry
-func (s *Scribe) Success(msg string, data interface{}) {
-	s.new(TypeSuccess, msg, data)
+func (s *Scribe) Success(msg string) {
+	s.new(TypeSuccess, msg, nil)
 }
 
 // Successf will create a new success entry with a format message
-func (s *Scribe) Successf(msg string, data interface{}, args ...interface{}) {
+func (s *Scribe) Successf(msg string, args ...interface{}) {
 	msg = fmt.Sprintf(msg, args...)
-	s.Success(msg, data)
+	s.Success(msg)
+}
+
+// SuccessWithData will create a new success entry with Data
+func (s *Scribe) SuccessWithData(msg string, data interface{}) {
+	s.new(TypeSuccess, msg, data)
+}
+
+// SuccessWithDataf will create a new success entry with Data and a format message
+func (s *Scribe) SuccessWithDataf(msg string, data interface{}, args ...interface{}) {
+	msg = fmt.Sprintf(msg, args...)
+	s.SuccessWithData(msg, data)
 }
 
 // Warning will create a new warning entry
-func (s *Scribe) Warning(msg string, data interface{}) {
-	s.new(TypeWarning, msg, data)
+func (s *Scribe) Warning(msg string) {
+	s.new(TypeWarning, msg, nil)
 }
 
 // Warningf will create a new warning entry with a format message
-func (s *Scribe) Warningf(msg string, data interface{}, args ...interface{}) {
+func (s *Scribe) Warningf(msg string, args ...interface{}) {
 	msg = fmt.Sprintf(msg, args...)
-	s.Warning(msg, data)
+	s.Warning(msg)
+}
+
+// WarningWithData will create a new warning entry with Data
+func (s *Scribe) WarningWithData(msg string, data interface{}) {
+	s.new(TypeWarning, msg, data)
+}
+
+// WarningWithDataf will create a new warning entry with Data and a format message
+func (s *Scribe) WarningWithDataf(msg string, data interface{}, args ...interface{}) {
+	msg = fmt.Sprintf(msg, args...)
+	s.WarningWithData(msg, data)
 }
 
 // Error will create a new error entry
-func (s *Scribe) Error(msg string, data interface{}) {
-	s.new(TypeError, msg, data)
+func (s *Scribe) Error(msg string) {
+	s.new(TypeError, msg, nil)
 }
 
 // Errorf will create a new error entry with a format message
-func (s *Scribe) Errorf(msg string, data interface{}, args ...interface{}) {
+func (s *Scribe) Errorf(msg string, args ...interface{}) {
 	msg = fmt.Sprintf(msg, args...)
-	s.Error(msg, data)
+	s.Error(msg)
+}
+
+// ErrorWithData will create a new error entry with Data
+func (s *Scribe) ErrorWithData(msg string, data interface{}) {
+	s.new(TypeError, msg, data)
+}
+
+// ErrorWithDataf will create a new error entry with Data and a format message
+func (s *Scribe) ErrorWithDataf(msg string, data interface{}, args ...interface{}) {
+	msg = fmt.Sprintf(msg, args...)
+	s.ErrorWithData(msg, data)
 }
 
 // Debug will create a new debug entry
-func (s *Scribe) Debug(msg string, data interface{}) {
+func (s *Scribe) Debug(msg string) {
+	filename, lineNumber := getDebugVals()
+	// Prepend the message with the caller's filename and line number
+	msg = fmt.Sprintf(debugFmt, filename, lineNumber, msg)
+	s.new(TypeDebug, msg, nil)
+}
+
+// Debugf will create a new debug entry with a format message
+func (s *Scribe) Debugf(msg string, args ...interface{}) {
+	msg = fmt.Sprintf(msg, args...)
+	s.Debug(msg)
+}
+
+// DebugWithData will create a new debug entry with Data
+func (s *Scribe) DebugWithData(msg string, data interface{}) {
 	filename, lineNumber := getDebugVals()
 	// Prepend the message with the caller's filename and line number
 	msg = fmt.Sprintf(debugFmt, filename, lineNumber, msg)
 	s.new(TypeDebug, msg, data)
 }
 
-// Debugf will create a new debug entry with a format message
-func (s *Scribe) Debugf(msg string, data interface{}, args ...interface{}) {
+// DebugWithDataf will create a new debug entry with Data and a format message
+func (s *Scribe) DebugWithDataf(msg string, data interface{}, args ...interface{}) {
 	msg = fmt.Sprintf(msg, args...)
-	s.Debug(msg, data)
+	s.DebugWithData(msg, data)
 }
