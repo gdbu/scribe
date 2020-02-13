@@ -52,15 +52,15 @@ func (s *Scribe) Notificationf(msg string, args ...interface{}) {
 	s.Notification(msg)
 }
 
-// NotificationWitData will create a new notificaton entry with Data
-func (s *Scribe) NotificationWitData(msg string, data interface{}) {
+// NotificationWithData will create a new notificaton entry with Data
+func (s *Scribe) NotificationWithData(msg string, data interface{}) {
 	s.new(TypeNotification, msg, data)
 }
 
 // NotificationWithDataf will create a new notificaton entry with Data and a format message
 func (s *Scribe) NotificationWithDataf(msg string, data interface{}, args ...interface{}) {
 	msg = fmt.Sprintf(msg, args...)
-	s.NotificationWitData(msg, data)
+	s.NotificationWithData(msg, data)
 }
 
 // Success will create a new success entry
