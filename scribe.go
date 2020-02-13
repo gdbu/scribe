@@ -46,9 +46,21 @@ func (s *Scribe) Notification(msg string, data interface{}) {
 	s.new(TypeNotification, msg, data)
 }
 
+// Notificationf will create a new notificaton entry
+func (s *Scribe) Notificationf(msg string, data interface{}, args ...interface{}) {
+	msg = fmt.Sprintf(msg, args...)
+	s.Notification(msg, data)
+}
+
 // Success will create a new success entry
 func (s *Scribe) Success(msg string, data interface{}) {
 	s.new(TypeSuccess, msg, data)
+}
+
+// Successf will create a new success entry with a format message
+func (s *Scribe) Successf(msg string, data interface{}, args ...interface{}) {
+	msg = fmt.Sprintf(msg, args...)
+	s.Success(msg, data)
 }
 
 // Warning will create a new warning entry
@@ -56,9 +68,21 @@ func (s *Scribe) Warning(msg string, data interface{}) {
 	s.new(TypeWarning, msg, data)
 }
 
+// Warningf will create a new warning entry with a format message
+func (s *Scribe) Warningf(msg string, data interface{}, args ...interface{}) {
+	msg = fmt.Sprintf(msg, args...)
+	s.Warning(msg, data)
+}
+
 // Error will create a new error entry
 func (s *Scribe) Error(msg string, data interface{}) {
 	s.new(TypeError, msg, data)
+}
+
+// Errorf will create a new error entry with a format message
+func (s *Scribe) Errorf(msg string, data interface{}, args ...interface{}) {
+	msg = fmt.Sprintf(msg, args...)
+	s.Error(msg, data)
 }
 
 // Debug will create a new debug entry
@@ -67,4 +91,10 @@ func (s *Scribe) Debug(msg string, data interface{}) {
 	// Prepend the message with the caller's filename and line number
 	msg = fmt.Sprintf(debugFmt, filename, lineNumber, msg)
 	s.new(TypeDebug, msg, data)
+}
+
+// Debugf will create a new debug entry with a format message
+func (s *Scribe) Debugf(msg string, data interface{}, args ...interface{}) {
+	msg = fmt.Sprintf(msg, args...)
+	s.Debug(msg, data)
 }
