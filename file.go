@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"path"
+	"path/filepath"
 	"sync"
 	"time"
 
@@ -70,16 +71,21 @@ func (f *File) rotateFile() (err error) {
 		return
 	}
 
+	originalName := f.f.Name()
+	// Set the directory
+	dir := filepath.Dir(originalName)
 	// Set current file name
-	name := f.f.Name()
+	name := filepath.Base(originalName)
 	// Set new file name as the current name with a timestamp prefix
 	newName := fmt.Sprintf("%d_%s", time.Now().UnixNano(), name)
+	// Set new filename (dir + name)
+	newFilename := filepath.Join(dir, newName)
 
 	if err = f.f.Close(); err != nil {
 		return
 	}
 
-	if err = os.Rename(name, newName); err != nil {
+	if err = os.Rename(originalName, newFilename); err != nil {
 		return
 	}
 
