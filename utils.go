@@ -5,15 +5,15 @@ import (
 	"path"
 	"runtime"
 
-	"github.com/fatih/color"
+	"github.com/hatchify/colors"
 )
 
 const dot = "● "
 
 var (
-	green  = color.New(color.FgGreen)
-	yellow = color.New(color.FgYellow)
-	red    = color.New(color.FgRed)
+	green  = colors.New(colors.FGGreen)
+	yellow = colors.New(colors.FGYellow)
+	red    = colors.New(colors.FGRed)
 
 	greenDot  = green.Sprint(dot)
 	yellowDot = yellow.Sprint(dot)
