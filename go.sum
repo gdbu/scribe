@@ -1,6 +1,6 @@
-github.com/Hatch1fy/cron v0.2.0 h1:wl51aUDWbWV5Qt4MiDIJ6cOFJTRW+bqPNbTVck5RUcQ=
-github.com/Hatch1fy/cron v0.2.0/go.mod h1:srziZhU5rAzVXoUSkVkzq3iZOk+u+Y7pV3nL+dXN9L4=
-github.com/Hatch1fy/errors v0.2.0 h1:LauUPPThrmYBOO1BQLv86zrtUc5fZZEa3DZAv1XLgsI=
-github.com/Hatch1fy/errors v0.2.0/go.mod h1:SJFCeScmERvwtYMG7EU24Fe0KfXmiIs7tNlcIl0STKk=
-github.com/hatchify/colors v0.2.0 h1:xBh5eztvly1MCesMeIXEaCKISH4XXDw70+0BSkOJCYQ=
-github.com/hatchify/colors v0.2.0/go.mod h1:t0952Ef1zDFMVTCkOwhrdJS9ToVWTdcJ3PWCHZADLuU=
+github.com/Hatch1fy/cron v0.3.0 h1:WLoEbsXoz/sK9h/90AK1kRYjn88k/1F488/1G/q9hXU=
+github.com/Hatch1fy/cron v0.3.0/go.mod h1:srziZhU5rAzVXoUSkVkzq3iZOk+u+Y7pV3nL+dXN9L4=
+github.com/Hatch1fy/errors v0.3.0 h1:KylivctV7WFButh5rYOSHJUTi2gcalRgsGkAfFk1FsY=
+github.com/Hatch1fy/errors v0.3.0/go.mod h1:SJFCeScmERvwtYMG7EU24Fe0KfXmiIs7tNlcIl0STKk=
+github.com/hatchify/colors v0.3.0 h1:S3n4JBQSv3u5nZ36vM9+PJZpCyRbdYlZLjOlyE8v2as=
+github.com/hatchify/colors v0.3.0/go.mod h1:t0952Ef1zDFMVTCkOwhrdJS9ToVWTdcJ3PWCHZADLuU=
