@@ -7,5 +7,3 @@ require (
 	github.com/Hatch1fy/errors v0.4.78
 	github.com/hatchify/colors v0.4.77
 )
-
-// *** Separate Local Deps *** \\
