@@ -1,6 +1,6 @@
 github.com/Hatch1fy/cron v0.4.78 h1:aNdJfiFYfEPWprxEBHM9taHV6jwWjMo17OvQYnD8528=
 github.com/Hatch1fy/cron v0.4.78/go.mod h1:srziZhU5rAzVXoUSkVkzq3iZOk+u+Y7pV3nL+dXN9L4=
-github.com/Hatch1fy/errors v0.4.78 h1:Xd64lclmP6Gg5i9WFm0wJWkcmf/1rd82DavHTpLVLZs=
-github.com/Hatch1fy/errors v0.4.78/go.mod h1:SJFCeScmERvwtYMG7EU24Fe0KfXmiIs7tNlcIl0STKk=
+github.com/Hatch1fy/errors v0.4.80 h1:LBr5Elytx6npBlF/36KTamC6I7h6VqkOVkRkbIdj3xY=
+github.com/Hatch1fy/errors v0.4.80/go.mod h1:SJFCeScmERvwtYMG7EU24Fe0KfXmiIs7tNlcIl0STKk=
 github.com/hatchify/colors v0.4.78 h1:T76bb++0Kc4VPpDR18p3KD81vSDFPWKd46EKgkxyX/E=
 github.com/hatchify/colors v0.4.78/go.mod h1:t0952Ef1zDFMVTCkOwhrdJS9ToVWTdcJ3PWCHZADLuU=
