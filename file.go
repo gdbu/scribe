@@ -10,7 +10,7 @@ import (
 	"time"
 
 	"github.com/Hatch1fy/cron"
-	"github.com/Hatch1fy/errors"
+	"github.com/hatchify/errors"
 )
 
 const (
