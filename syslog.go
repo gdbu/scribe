@@ -1,3 +1,7 @@
+// log/syslog is not implemented for windows or plan9
+// 	https://golang.org/src/log/syslog/syslog.go
+// +build !windows,!plan9
+
 package scribe
 
 import (
