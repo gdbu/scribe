@@ -9,7 +9,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Hatch1fy/cron"
+	"github.com/hatchify/cron"
 	"github.com/hatchify/errors"
 )
 
