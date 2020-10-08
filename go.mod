@@ -1,4 +1,4 @@
-module github.com/hatchify/scribe
+module github.com/gdbu/scribe
 
 go 1.14
 
