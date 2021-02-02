@@ -1,14 +1,17 @@
 package scribe
 
-import "fmt"
+import (
+	"fmt"
+	"io"
+)
 
-var stdout = NewStdout()
+var g *Basic = NewStdout()
 
 const debugFmt = "%s:%d :: %s"
 
 // New will return a new Scribe
 func New(prefix string) *Scribe {
-	return NewWithWriter(stdout, prefix)
+	return NewWithWriter(g, prefix)
 }
 
 // NewWithWriter will return a new Scribe with a provided Writer
@@ -155,4 +158,9 @@ func (s *Scribe) DebugWithData(msg string, data interface{}) {
 func (s *Scribe) DebugWithDataf(msg string, data interface{}, args ...interface{}) {
 	msg = fmt.Sprintf(msg, args...)
 	s.DebugWithData(msg, data)
+}
+
+// SetGlobalWriter will set the global writer
+func SetGlobalWriter(w io.Writer) {
+	g.setWriter(w)
 }
