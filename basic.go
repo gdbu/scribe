@@ -56,37 +56,8 @@ func (b *Basic) SetSuffix(suffix string) {
 	b.suffix = suffix
 }
 
-/*
-func (b *Basic) Emerg(msg string) (err error) {
-	return
+func (b *Basic) setWriter(w io.Writer) {
+	b.mux.Lock()
+	defer b.mux.Unlock()
+	b.w = w
 }
-
-
-func (b *Basic) Alert(msg string) (err error) {
-	return
-}
-
-func (b *Basic) Critical(msg string) (err error) {
-	return
-}
-
-func (b *Basic) Error(msg string) (err error) {
-	return
-}
-
-func (b *Basic) Warning(msg string) (err error) {
-	return
-}
-
-func (b *Basic) Notice(msg string) (err error) {
-	return
-}
-
-func (b *Basic) Info(msg string) (err error) {
-	return
-}
-
-func (b *Basic) Debug(msg string) (err error) {
-	return
-}
-*/
