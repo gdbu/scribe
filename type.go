@@ -15,3 +15,21 @@ const (
 
 // Type represents an entry type
 type Type string
+
+func (t Type) Verbosity() Verbosity {
+	switch t {
+	case TypeNotification:
+		return VerbosityNotifications
+	case TypeSuccess:
+		return VerbositySuccesses
+	case TypeWarning:
+		return VerbosityWarnings
+	case TypeError:
+		return VerbosityErrors
+	case TypeDebug:
+		return VerbosityErrors
+
+	default:
+		return VerbosityAll
+	}
+}

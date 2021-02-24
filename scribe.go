@@ -28,12 +28,21 @@ func NewWithWriter(w Writer, prefix string) *Scribe {
 // Scribe will create new scribe entries
 type Scribe struct {
 	w Writer
+	v Verbosity
 
 	prefix string
 }
 
 // new will append a new scribe Entry
 func (s *Scribe) new(t Type, msg string, data interface{}) {
+	switch {
+	case s.v == VerbosityAll:
+	case s.v&t.Verbosity() != 0:
+
+	default:
+		return
+	}
+
 	// Prepend prefix to message
 	msg = s.prefix + msg
 	// Create new entry from provided values
@@ -163,4 +172,9 @@ func (s *Scribe) DebugWithDataf(msg string, data interface{}, args ...interface{
 // SetGlobalWriter will set the global writer
 func SetGlobalWriter(w io.Writer) {
 	g.setWriter(w)
+}
+
+// SetVerbosity will set the verbosity of a scribe instance
+func SetVerbosity(s *Scribe, v Verbosity) {
+	s.v = v
 }

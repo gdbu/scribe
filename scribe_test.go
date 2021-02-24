@@ -14,6 +14,16 @@ func TestScribe_New(t *testing.T) {
 	s.Debug("This is a debug log")
 }
 
+func TestScribe_New_verbosity_successes_and_errors_only(t *testing.T) {
+	s := New("Testing")
+	s.v = VerbositySuccesses | VerbosityErrors
+	s.Notification("This is a notification log")
+	s.Success("This is a success log")
+	s.Warning("This is a warning log")
+	s.Error("This is an error log")
+	s.Debug("This is a debug log")
+}
+
 func TestScribe_New_File(t *testing.T) {
 	var (
 		f   *File
