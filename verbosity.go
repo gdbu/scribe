@@ -6,6 +6,7 @@ const (
 	VerbosityNotifications
 	VerbosityWarnings
 	VerbosityErrors
+	VerbosityNone
 )
 
 type Verbosity uint8

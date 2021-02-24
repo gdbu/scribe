@@ -37,6 +37,8 @@ type Scribe struct {
 func (s *Scribe) new(t Type, msg string, data interface{}) {
 	switch {
 	case s.v == VerbosityAll:
+	case s.v == VerbosityNone:
+		return
 	case s.v&t.Verbosity() != 0:
 
 	default:
