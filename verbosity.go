@@ -1,12 +1,12 @@
 package scribe
 
 const (
-	VerbosityAll       Verbosity = 0
-	VerbositySuccesses Verbosity = 1 << iota
+	VerbosityNone Verbosity = 1 << iota
+	VerbosityAll
+	VerbositySuccesses
 	VerbosityNotifications
 	VerbosityWarnings
 	VerbosityErrors
-	VerbosityNone
 )
 
 type Verbosity uint8
