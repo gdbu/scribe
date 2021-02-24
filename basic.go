@@ -38,7 +38,7 @@ func (b *Basic) Write(e *Entry) (err error) {
 	b.mux.Lock()
 	defer b.mux.Unlock()
 	bs := []byte(b.getMessage(e))
-	b.w.Write(bs)
+	_, err = b.w.Write(bs)
 	return
 }
 
