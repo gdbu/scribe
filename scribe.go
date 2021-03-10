@@ -18,6 +18,8 @@ func New(prefix string) *Scribe {
 func NewWithWriter(w Writer, prefix string) *Scribe {
 	var s Scribe
 	s.w = w
+	s.v = VerbosityAll
+
 	if len(prefix) > 0 {
 		s.prefix = prefix + " :: "
 	}
